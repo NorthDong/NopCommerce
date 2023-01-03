@@ -361,3 +361,11 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Plugins/Nop.Plugin.Tax.Avalara/Models/Log/TaxTransactionLogSearchModel.cs
+/Plugins/Nop.Plugin.Tax.Avalara/Models/Log/TaxTransactionLogModel.cs
+/Plugins/Nop.Plugin.Tax.Avalara/Models/Log/TaxTransactionLogListModel.cs
+/Plugins/Nop.Plugin.Tax.Avalara/Models/Log/TaxTransactionLogSearchModel.cs
+/Plugins/Nop.Plugin.Tax.Avalara/Models/Log/TaxTransactionLogModel.cs
+/Plugins/Nop.Plugin.Tax.Avalara/Models/Log/TaxTransactionLogListModel.cs
+/Plugins/Nop.Plugin.Tax.Avalara/Views/Log/View.cshtml
+/Plugins/Nop.Plugin.Tax.Avalara/Views/Log/List.cshtml
