@@ -70,6 +70,9 @@ echo Handling ASP.NET Core Web Application deployment.
 call :ExecuteCmd dotnet restore "%DEPLOYMENT_SOURCE%\NopCommerce.sln"
 IF !ERRORLEVEL! NEQ 0 goto error
 
+:: 1.01 Build plugin customer roles to temporary path
+call :ExecuteCmd dotnet build "%DEPLOYMENT_SOURCE%\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.csproj" -c Release
+
 :: 2. Build and publish
 call :ExecuteCmd dotnet publish "%DEPLOYMENT_SOURCE%\Presentation\Nop.Web\Nop.Web.csproj" --output "%DEPLOYMENT_TEMP%" --configuration Release
 IF !ERRORLEVEL! NEQ 0 goto error
