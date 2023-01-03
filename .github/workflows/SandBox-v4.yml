@@ -1,17 +1,17 @@
-name: Build and deploy .NET Core application to Web App SandBox-v3
+name: Build and deploy .NET Core application to Web App SandBox-v4
 on:
   push:
     branches:
     - master
 env:
-  AZURE_WEBAPP_NAME: SandBox-v3
-  AZURE_WEBAPP_PACKAGE_PATH: Presentation\Nop.Web\published
+  AZURE_WEBAPP_NAME: SandBox-v4
+  AZURE_WEBAPP_PACKAGE_PATH: Presentation/Nop.Web/published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 7.0.x
-  WORKING_DIRECTORY: Presentation\Nop.Web
+  WORKING_DIRECTORY: Presentation/Nop.Web
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -32,7 +32,7 @@ jobs:
         name: webapp
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: build
     steps:
     - name: Download artifact from build job
@@ -44,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.SandBox_v3_A0A0 }}
+        publish-profile: ${{ secrets.SandBox_v4_68A7 }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
